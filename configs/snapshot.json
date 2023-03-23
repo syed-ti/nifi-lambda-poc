@@ -1,0 +1,280 @@
+{
+    "externalControllerServices": {},
+    "flowEncodingVersion": "1.0",
+    "parameterContexts": {},
+    "snapshotMetadata": {
+        "author": "",
+        "comments": "",
+        "timestamp": 1676577758403,
+        "version": 1
+    },
+    "flowContents": {
+        "identifier": "d1133665-d4f7-36c5-acb2-479d017de5c6",
+        "instanceIdentifier": "e4019344-0186-1000-4883-58f9737b5c16",
+        "name": "NiFi Flow",
+        "comments": "",
+        "position": {
+            "x": 0.0,
+            "y": 0.0
+        },
+        "processGroups": [],
+        "remoteProcessGroups": [],
+        "processors": [
+            {
+                "identifier": "1989c38b-7b86-3334-b029-ab1e8e3f958f",
+                "instanceIdentifier": "351836d6-4744-18d4-546c-9208d3d741ea",
+                "name": "HandleHttpResponse",
+                "comments": "",
+                "position": {
+                    "x": 1168.0,
+                    "y": 1560.0
+                },
+                "type": "org.apache.nifi.processors.standard.HandleHttpResponse",
+                "bundle": {
+                    "group": "org.apache.nifi",
+                    "artifact": "nifi-standard-nar",
+                    "version": "1.20.0"
+                },
+                "properties": {
+                    "HTTP Context Map": "2a3d3e8b-830b-3a3a-9dc4-18db2deaf31a",
+                    "HTTP Status Code": "200"
+                },
+                "propertyDescriptors": {},
+                "style": {},
+                "schedulingPeriod": "0 sec",
+                "schedulingStrategy": "TIMER_DRIVEN",
+                "executionNode": "ALL",
+                "penaltyDuration": "30 sec",
+                "yieldDuration": "1 sec",
+                "bulletinLevel": "WARN",
+                "runDurationMillis": 0,
+                "concurrentlySchedulableTaskCount": 1,
+                "autoTerminatedRelationships": [
+                    "success",
+                    "failure"
+                ],
+                "scheduledState": "ENABLED",
+                "retryCount": 10,
+                "retriedRelationships": [],
+                "backoffMechanism": "PENALIZE_FLOWFILE",
+                "maxBackoffPeriod": "10 mins",
+                "componentType": "PROCESSOR",
+                "groupIdentifier": "d1133665-d4f7-36c5-acb2-479d017de5c6"
+            },
+            {
+                "identifier": "41995f44-e2c8-364e-bb41-07fe475241f8",
+                "instanceIdentifier": "351836d8-4744-18d4-758d-6d1cd1508c9e",
+                "name": "ReplaceText",
+                "comments": "",
+                "position": {
+                    "x": 768.0,
+                    "y": 1560.0
+                },
+                "type": "org.apache.nifi.processors.standard.ReplaceText",
+                "bundle": {
+                    "group": "org.apache.nifi",
+                    "artifact": "nifi-standard-nar",
+                    "version": "1.20.0"
+                },
+                "properties": {
+                    "Regular Expression": "(.*)",
+                    "Replacement Value": "{\n  \"message\": \"Hello world from NiFi\"\n}",
+                    "Evaluation Mode": "Entire text",
+                    "Line-by-Line Evaluation Mode": "All",
+                    "Character Set": "UTF-8",
+                    "Maximum Buffer Size": "1 MB",
+                    "Replacement Strategy": "Always Replace"
+                },
+                "propertyDescriptors": {},
+                "style": {},
+                "schedulingPeriod": "0 sec",
+                "schedulingStrategy": "TIMER_DRIVEN",
+                "executionNode": "ALL",
+                "penaltyDuration": "30 sec",
+                "yieldDuration": "1 sec",
+                "bulletinLevel": "WARN",
+                "runDurationMillis": 25,
+                "concurrentlySchedulableTaskCount": 1,
+                "autoTerminatedRelationships": [
+                    "failure"
+                ],
+                "scheduledState": "ENABLED",
+                "retryCount": 10,
+                "retriedRelationships": [],
+                "backoffMechanism": "PENALIZE_FLOWFILE",
+                "maxBackoffPeriod": "10 mins",
+                "componentType": "PROCESSOR",
+                "groupIdentifier": "d1133665-d4f7-36c5-acb2-479d017de5c6"
+            },
+            {
+                "identifier": "317f99f9-4018-3c2d-8324-46877a894092",
+                "instanceIdentifier": "351836d4-4744-18d4-6470-c729bc6691c5",
+                "name": "HandleHttpRequest",
+                "comments": "",
+                "position": {
+                    "x": 384.0,
+                    "y": 1544.0
+                },
+                "type": "org.apache.nifi.processors.standard.HandleHttpRequest",
+                "bundle": {
+                    "group": "org.apache.nifi",
+                    "artifact": "nifi-standard-nar",
+                    "version": "1.20.0"
+                },
+                "properties": {
+                    "multipart-request-max-size": "1 MB",
+                    "Allow POST": "false",
+                    "Default URL Character Set": "UTF-8",
+                    "Allow DELETE": "false",
+                    "Maximum Threads": "200",
+                    "HTTP Protocols": "HTTP_1_1",
+                    "container-queue-size": "50",
+                    "HTTP Context Map": "2a3d3e8b-830b-3a3a-9dc4-18db2deaf31a",
+                    "multipart-read-buffer-size": "512 KB",
+                    "Allow OPTIONS": "false",
+                    "Allowed Paths": "/api",
+                    "Allow GET": "true",
+                    "Allow HEAD": "false",
+                    "Listening Port": "8080",
+                    "Client Authentication": "No Authentication",
+                    "Allow PUT": "false"
+                },
+                "propertyDescriptors": {},
+                "style": {},
+                "schedulingPeriod": "0 sec",
+                "schedulingStrategy": "TIMER_DRIVEN",
+                "executionNode": "ALL",
+                "penaltyDuration": "30 sec",
+                "yieldDuration": "1 sec",
+                "bulletinLevel": "WARN",
+                "runDurationMillis": 0,
+                "concurrentlySchedulableTaskCount": 1,
+                "autoTerminatedRelationships": [],
+                "scheduledState": "ENABLED",
+                "retryCount": 10,
+                "retriedRelationships": [],
+                "backoffMechanism": "PENALIZE_FLOWFILE",
+                "maxBackoffPeriod": "10 mins",
+                "componentType": "PROCESSOR",
+                "groupIdentifier": "d1133665-d4f7-36c5-acb2-479d017de5c6"
+            }
+        ],
+        "inputPorts": [],
+        "outputPorts": [],
+        "connections": [
+            {
+                "identifier": "21075c1d-f4fc-3361-aea3-1b2f8e17b18f",
+                "instanceIdentifier": "351836d9-4744-18d4-ce54-515371905fb2",
+                "name": "",
+                "source": {
+                    "id": "317f99f9-4018-3c2d-8324-46877a894092",
+                    "type": "PROCESSOR",
+                    "groupId": "d1133665-d4f7-36c5-acb2-479d017de5c6",
+                    "name": "HandleHttpRequest",
+                    "comments": "",
+                    "instanceIdentifier": "351836d4-4744-18d4-6470-c729bc6691c5"
+                },
+                "destination": {
+                    "id": "41995f44-e2c8-364e-bb41-07fe475241f8",
+                    "type": "PROCESSOR",
+                    "groupId": "d1133665-d4f7-36c5-acb2-479d017de5c6",
+                    "name": "ReplaceText",
+                    "comments": "",
+                    "instanceIdentifier": "351836d8-4744-18d4-758d-6d1cd1508c9e"
+                },
+                "labelIndex": 1,
+                "zIndex": 0,
+                "selectedRelationships": [
+                    "success"
+                ],
+                "backPressureObjectThreshold": 10000,
+                "backPressureDataSizeThreshold": "1 GB",
+                "flowFileExpiration": "0 sec",
+                "prioritizers": [],
+                "bends": [],
+                "loadBalanceStrategy": "DO_NOT_LOAD_BALANCE",
+                "partitioningAttribute": "",
+                "loadBalanceCompression": "DO_NOT_COMPRESS",
+                "componentType": "CONNECTION",
+                "groupIdentifier": "d1133665-d4f7-36c5-acb2-479d017de5c6"
+            },
+            {
+                "identifier": "58d55938-f3d1-351b-b98b-8b4476e22248",
+                "instanceIdentifier": "351836da-4744-18d4-e863-0796656ad67d",
+                "name": "",
+                "source": {
+                    "id": "41995f44-e2c8-364e-bb41-07fe475241f8",
+                    "type": "PROCESSOR",
+                    "groupId": "d1133665-d4f7-36c5-acb2-479d017de5c6",
+                    "name": "ReplaceText",
+                    "comments": "",
+                    "instanceIdentifier": "351836d8-4744-18d4-758d-6d1cd1508c9e"
+                },
+                "destination": {
+                    "id": "1989c38b-7b86-3334-b029-ab1e8e3f958f",
+                    "type": "PROCESSOR",
+                    "groupId": "d1133665-d4f7-36c5-acb2-479d017de5c6",
+                    "name": "HandleHttpResponse",
+                    "comments": "",
+                    "instanceIdentifier": "351836d6-4744-18d4-546c-9208d3d741ea"
+                },
+                "labelIndex": 1,
+                "zIndex": 0,
+                "selectedRelationships": [
+                    "success"
+                ],
+                "backPressureObjectThreshold": 10000,
+                "backPressureDataSizeThreshold": "1 GB",
+                "flowFileExpiration": "0 sec",
+                "prioritizers": [],
+                "bends": [],
+                "loadBalanceStrategy": "DO_NOT_LOAD_BALANCE",
+                "partitioningAttribute": "",
+                "loadBalanceCompression": "DO_NOT_COMPRESS",
+                "componentType": "CONNECTION",
+                "groupIdentifier": "d1133665-d4f7-36c5-acb2-479d017de5c6"
+            }
+        ],
+        "labels": [],
+        "funnels": [],
+        "controllerServices": [
+            {
+                "identifier": "631fcef8-554a-36d6-835c-9e60bc729fec",
+                "instanceIdentifier": "2a3d3e8b-830b-3a3a-9dc4-18db2deaf31a",
+                "name": "StandardHttpContextMap",
+                "type": "org.apache.nifi.http.StandardHttpContextMap",
+                "bundle": {
+                    "group": "org.apache.nifi",
+                    "artifact": "nifi-http-context-map-nar",
+                    "version": "1.20.0"
+                },
+                "properties": {
+                    "Request Expiration": "1 min",
+                    "Maximum Outstanding Requests": "5000"
+                },
+                "propertyDescriptors": {},
+                "controllerServiceApis": [
+                    {
+                        "type": "org.apache.nifi.http.HttpContextMap",
+                        "bundle": {
+                            "group": "org.apache.nifi",
+                            "artifact": "nifi-standard-services-api-nar",
+                            "version": "1.20.0"
+                        }
+                    }
+                ],
+                "scheduledState": "ENABLED",
+                "bulletinLevel": "WARN",
+                "componentType": "CONTROLLER_SERVICE",
+                "groupIdentifier": "d1133665-d4f7-36c5-acb2-479d017de5c6"
+            }
+        ],
+        "variables": {},
+        "defaultFlowFileExpiration": "0 sec",
+        "defaultBackPressureObjectThreshold": 10000,
+        "defaultBackPressureDataSizeThreshold": "1 GB",
+        "flowFileConcurrency": "UNBOUNDED",
+        "flowFileOutboundPolicy": "STREAM_WHEN_AVAILABLE",
+        "componentType": "PROCESS_GROUP"
+    }
+}
